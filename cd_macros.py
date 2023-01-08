@@ -301,7 +301,7 @@ class Command:
             HT_ACTS = (self.dlg_prs.get('w_acts', 300)
                       ,self.dlg_prs.get('h_acts', 500))
             WD_BTN, \
-            HT_BTN  = (self.dlg_prs.get('w_btn', 150), 24)
+            HT_BTN  = (self.dlg_prs.get('w_btn', 150), 28)
             WD_BTN_3= int(WD_BTN/3)
             l_btn   = GAP+WD_LST+GAP
             l_acts  = GAP+WD_LST+GAP+WD_BTN+GAP
@@ -389,14 +389,14 @@ class Command:
 #           if ans_s=='close':  break #while
             if btn=='adju': #ans_s=='custom': #Custom
                 custs   = app.dlg_input_ex(5, _('Custom dialog Macros')
-                    , _('Height of macro list (min 450)')          , str(self.dlg_prs.get('h_list', 400))
+                    , _('Height of macro list (min 520)')          , str(self.dlg_prs.get('h_list', 520))
                     , _('Width of macro list (min 200)')           , str(self.dlg_prs.get('w_list', 500))
                     , _('Width of action list (min 200, <=0-hide)'), str(self.dlg_prs.get('w_acts', 500))
                     , _('Width of buttons (min 150)')              , str(self.dlg_prs.get('w_btn',  150))
                     , _('Max run times (min 100)')                 , str(self.dlg_prs.get('times',  1000))
                     )
                 if custs is not None:
-                    self.dlg_prs['h_list']  = max(450, int(custs[0]));  self.dlg_prs['h_acts'] = self.dlg_prs['h_list']
+                    self.dlg_prs['h_list']  = max(520, int(custs[0]));  self.dlg_prs['h_acts'] = self.dlg_prs['h_list']
                     self.dlg_prs['w_list']  = max(200, int(custs[1]))
                     self.dlg_prs['w_acts']  = max(200, int(custs[2])) if int(custs[2])>0 else int(custs[2])
                     self.dlg_prs['w_btn']   = max(150, int(custs[3]))
